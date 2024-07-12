@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "UserProfile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+    .custom-card {
+        background-color: #1e7e34;
+        color: white;
+        cursor: pointer;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+        .custom-card:hover {
+            transform: scale(1.05);
+        }
+
+    .card-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .custom-card:hover .card-overlay {
+        opacity: 1;
+    }
+
+    .card-title {
+        margin-bottom: 10px;
+    }
+
+    margin-bottom: 10px;
+    }
+</style>
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+    <a asp-action="ExerciseProgram" asp-controller="SportProgram">
+        <div class="col-md-6">
+   
+            <div class="card custom-card" onclick="">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/healthy-food-8972131-7361808.png?f=webp" class="card-img-top" alt="...">
+                <div class="card-overlay">
+                        <h5 class="card-title">Beslenme Verilerim</h5>
+                    
+                </div>
+            </div>
+        </div>
+        </a>
+        <div class="col-md-6">
+            <div class="card custom-card" onclick="window.location.href='link2.html';">
+                <img src="https://static.vecteezy.com/system/resources/previews/011/733/916/original/fitness-gym-3d-render-icon-illustration-png.png" class="card-img-top" alt="...">
+                <div class="card-overlay">
+                    <h5 class="card-title">Spor Programım</h5>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

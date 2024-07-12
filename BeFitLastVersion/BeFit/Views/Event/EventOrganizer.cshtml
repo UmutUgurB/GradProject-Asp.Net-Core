@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model List<Activity>
+
+@{
+    ViewData["Title"] = "EventOrganizer";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Güncel Etkinlik Listemiz</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Katılacağım</th>
+            <th scope="col">Katılacakları Gör</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+            <th scope="row">@item.ActivityID</th>
+            <td>@item.ActivityName</td>
+            
+            
+        </tr>
+        }
+        </tbody>

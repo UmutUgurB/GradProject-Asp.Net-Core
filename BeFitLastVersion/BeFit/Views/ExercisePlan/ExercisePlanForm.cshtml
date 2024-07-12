@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "ExercisePlanForm";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+    .container {
+        text-align: center;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #00796b;
+    }
+
+    .calendar {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .day {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .day:hover {
+            background-color: #45a049;
+            transform: translateY(-5px);
+        }
+
+        .day:active {
+            background-color: #388e3c;
+            transform: translateY(0);
+        }
+</style>
+<div class="container">
+    <h1>30 Günlük Yol Haritası</h1>
+    <div class="calendar">
+        <!-- JavaScript ile gün kutuları burada oluşturulacak -->
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const calendar = document.querySelector('.calendar');
+
+        for (let i = 1; i <= 30; i++) {
+            const day = document.createElement('div');
+            day.className = 'day';
+            day.textContent = i;
+            day.setAttribute('data-url', `https://example.com/day${i}`);
+            day.addEventListener('click', function () {
+                const url = day.getAttribute('data-url');
+                window.location.href = url;
+            });
+            calendar.appendChild(day);
+        }
+    });
+
+</script>

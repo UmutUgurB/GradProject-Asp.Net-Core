@@ -1,0 +1,32 @@
+﻿@model BeFit.Models.AddPlaceImage
+@{
+    ViewData["Title"] = "AddPlace";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<form class="form-group" method="post" enctype="multipart/form-data">
+
+    @Html.HiddenFor(x=> x.PlaceID, new {@class = "form-control"})
+    <div class="form-sample">
+        <div class="form-group">
+            <label>Mekan Adı</label>
+            @Html.TextBoxFor(x=> x.PlaceName,new{@class="form-control"})
+        </div>
+        <div class="form-group">
+            <label>Mekan Açıklaması</label>
+            @Html.TextBoxFor(x => x.PlaceDescription, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Yemek Kartı Geçerli Mi</label>
+            @Html.TextBoxFor(x => x.TicketIsAvailable, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Mekan Görseli</label>
+            <input  type="file" name="PlaceImage"/>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Kaydet</button>
+
+</form>

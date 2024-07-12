@@ -1,0 +1,75 @@
+﻿@model QuizViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="quiz-container">
+        <h3 id="question-text">Soru 1: Kendinizi ne kadar enerjik hissediyorsunuz?</h3>
+        <input type="number" id="score" min="1" max="5" required />
+        <button id="next-button">Sonraki</button>
+    </div>
+    <div id="result-container" style="display:none;">
+        <h3 id="result-text"></h3>
+    </div>
+
+    <script>
+        var currentQuestionIndex = 0;
+        var scores = [];
+        var questions = [
+            "Soru 1: Kendinizi ne kadar enerjik hissediyorsunuz?",
+            "Soru 2: Ne kadar sıklıkla egzersiz yapıyorsunuz?",
+            "Soru 3: Ne kadar süreyle egzersiz yapıyorsunuz?",
+            "Soru 4: Egzersiz yaparken kendinizi ne kadar motive hissediyorsunuz?",
+            "Soru 5: Egzersiz yaparken ne kadar zorlanıyorsunuz?",
+            "Soru 6: Egzersiz yaparken ne kadar zevk alıyorsunuz?",
+            "Soru 7: Egzersiz yaparken ne kadar terliyorsunuz?",
+            "Soru 8: Egzersiz yaparken ne kadar yoruluyorsunuz?",
+            "Soru 9: Egzersiz yaparken ne kadar acı çekiyorsunuz?",
+            "Soru 10: Egzersiz yaparken ne kadar rahat hissediyorsunuz?"
+        ];
+
+        $("#next-button").click(function () {
+            var score = parseInt($("#score").val());
+            if (score >= 1 && score <= 5) {
+                scores.push(score);
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    $("#question-text").text(questions[currentQuestionIndex]);
+                    $("#score").val('');
+                } else {
+                    submitQuiz();
+                }
+            } else {
+                alert("Lütfen 1 ile 5 arasında bir puan girin.");
+            }
+        });
+
+        function submitQuiz() {
+            $.ajax({
+                url: '@Url.Action("SubmitQuiz", "Quiz")',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ Scores: scores }),
+                success: function (response) {
+                    if (response.success) {
+                        $("#quiz-container").hide();
+                        $("#result-text").text("Atanan Program: " + response.programName);
+                        $("#result-container").show();
+                    } else {
+                        alert("Bir hata oluştu.");
+                    }
+                },
+                error: function () {
+                    alert("Bir hata oluştu.");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

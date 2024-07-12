@@ -1,0 +1,74 @@
+﻿@using EntityLayer.Concrete
+
+@{
+    ViewData["Title"] = "Participants";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+@model List<User>
+@{
+    ViewData["Title"] = "Participants";
+}<style>
+     body {
+         background-color: #2F4F4F; /* DarkSlateGray */
+         color: #ffffff; /* White */
+         font-family: Arial, sans-serif;
+     }
+
+     .table {
+         color: #ffffff; /* White */
+         margin-top: 20px;
+     }
+
+         .table th, .table td {
+             text-align: center;
+             vertical-align: middle;
+             border-color: #ffffff; /* White */
+         }
+
+     .table-striped tbody tr:nth-of-type(odd) {
+         background-color: #3C5C5E; /* A slightly lighter shade for striped rows */
+     }
+
+     .table-striped tbody tr:nth-of-type(even) {
+         background-color: #2F4F4F; /* DarkSlateGray */
+     }
+
+     .user-img {
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+     }
+</style>
+
+<div class="alert alert-danger" role="alert">
+    Katılımcı Sayısı: <a href="#" class="alert-link">@ViewBag.ParticipantCount</a>
+</div>
+
+<table class="table table-striped table-hover table-bordered">
+    <thead style="background-color: darkslategray; color: white;">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Kullanıcı Adı</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+        </tr>
+    </thead>
+    <tbody style="background-color: #2F4F4F; color: #ffffff;">
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@user.UserImage" alt="User Image" class="user-img" />
+                </td>
+                <td>@user.UserName</td>
+                <td>@user.UserEmail</td>
+                <td>@user.UserPhone</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

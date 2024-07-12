@@ -1,0 +1,132 @@
+﻿@using EntityLayer.Concrete 
+@model List<Place>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+    body {
+        background-color: #2F4F4F;
+        color: #FFFFFF;
+    }
+
+    .card {
+        border: none;
+        border-radius: 10px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        background-color: #37474F;
+        color: #FFFFFF;
+        height: 100%;
+    }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+    .card-img-top {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-body {
+        text-align: center;
+    }
+
+    .btn-custom {
+        margin: 5px 0;
+    }
+
+    .btn-new-place {
+        display: inline-block;
+        margin-bottom: 20px;
+        text-align: right;
+    }
+
+    .btn-primary {
+        background-color: #0277BD;
+        border-color: #0277BD;
+    }
+
+    .btn-secondary {
+        background-color: #455A64;
+        border-color: #455A64;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .card-text {
+        font-size: 1.1rem;
+        color: #B0BEC5;
+    }
+
+    a {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+        a:hover {
+            color: #B0BEC5;
+        }
+</style>
+
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <!-- "Yeni Mekan Ekle" Butonu -->
+            <div class="col-12 btn-new-place text-end">
+                <a class="btn btn-success" asp-action="AddPlace" asp-controller="Place">
+                    <i class="fas fa-plus"></i> Yeni Mekan Ekle
+                </a>
+            </div>
+        </div>
+    @if (ViewBag.ort != null)
+    {
+        <h2>Ortalama Puanlar</h2>
+        <ul>
+            @foreach (var ort in ViewBag.ort)
+            {
+                <li>@ort</li>
+            }
+        </ul>
+    }
+        <div class="row">
+            <!-- Mekan Kartları -->
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                    <img class="card-img-top" src="~/PlaceImageFolder/@item.PlaceImage" alt="@item.PlaceName">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title">@item.PlaceName</h5>
+                                <p class="card-text">@item.PlaceDescription</p>
+                            </div>
+                            <div>
+                                <a class="btn btn-primary btn-custom" asp-action="CommentListByPlace" asp-controller="Place" asp-route-placeId="@item.PlaceID">
+                                    <i class="fas fa-comments"></i> Yorumları Gör
+                                </a>
+                                <a class="btn btn-secondary btn-custom" asp-action="AddComment" asp-controller="Place" asp-route-placeId="@item.PlaceID">
+                                    <i class="fas fa-edit"></i> İşletme Hakkında Yorum Yap
+                                </a>
+                               
+                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+

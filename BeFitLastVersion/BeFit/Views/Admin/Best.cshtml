@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewData["Title"] = "Best";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .card-container {
+        display: flex;
+        justify-content: center; /* Kartları ortalamak için */
+        gap: 20px; /* Kartlar arasındaki boşluk */
+        margin-top: 20px; /* Üst taraftan boşluk */
+    }
+
+    .custom-card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px; /* Kartın genişliği */
+    }
+
+        .custom-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    .card-img-top {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 150px; /* Resmin boyutu */
+        object-fit: cover; /* Resmin kart içine sığmasını sağladık */
+    }
+
+    .card-body {
+        background-color: #ffffff;
+        padding: 15px; /* Kartın iç kısmının boşluğu */
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .card-title {
+        font-size: 20px; /* Başlık boyutu */
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    .card-text {
+        font-size: 14px; /* Metin boyutu */
+        color: #6c757d;
+        margin-bottom: 10px;
+    }
+
+    .card-score {
+        font-size: 16px; /* Skor metninin boyutu */
+        font-weight: bold;
+        color: #28a745;
+    }
+</style>
+
+<div class="card-container">
+    <div class="card custom-card">
+        <img src="https://st3.depositphotos.com/6159328/17569/i/450/depositphotos_175692672-stock-photo-best-best-colorful-stamp-white.jpg" class="card-img-top" alt="Card Image">
+        <div class="card-body">
+            <h5 class="card-title">En Beğenilen İşletme:</h5>
+            <p class="card-text">@ViewBag.BestPlaceName</p>
+            <p class="card-score">Skoru : @ViewBag.BestPlaceOrtalama</p>
+        </div>
+    </div>
+    <div class="card custom-card">
+        <img src="https://st3.depositphotos.com/6159328/17569/i/450/depositphotos_175692672-stock-photo-best-best-colorful-stamp-white.jpg" class="card-img-top" alt="Card Image">
+        <div class="card-body">
+            <h5 class="card-title">En Çok Kayıt Olunan Spor Programı:</h5>
+            <p class="card-text">ŞAMPİYONUN YOLU</p>
+            <p class="card-score">Üye Sayısı : 4 </p>
+        </div>
+    </div>
+</div>

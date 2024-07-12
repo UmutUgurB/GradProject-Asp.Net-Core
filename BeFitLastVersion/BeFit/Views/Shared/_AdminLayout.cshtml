@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/writer/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/writer/assets/vendors/css/vendor.bundle.base.css">
+    
+    <link rel="stylesheet" href="~/writer/assets/css/style.css">
+    
+    <link rel="shortcut icon" href="~/writer/assets/images/favicon.ico" />
+</head>
+<body>
+    <div class="container-scroller">
+        
+        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            
+            <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+                
+                
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:../../partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item nav-profile">
+                        <a href="#" class="nav-link">
+                            
+                            <div class="nav-profile-text d-flex flex-column">
+                                <h6 style="">B-Fit Admin</h6>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Admin" asp-action="Index">
+                            <span class="menu-title">Anasayfa</span>
+                            <i class="mdi mdi-home menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Admin" asp-action="MemberList">
+                            <span class="menu-title">Üye Listemiz</span>
+                            <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Admin" asp-action="Best">
+                            <span class="menu-title">Enlerimiz</span>
+                            <i class="mdi mdi-plus-list-bulleted menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Contact" asp-action="MessageList">
+                            <span class="menu-title">Gelen Mesajlar</span>
+                            <i class="mdi mdi-plus-list-bulleted menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Exercise" asp-action="AllExercises">
+                            <span class="menu-title">Egzersizlerin Listesi</span>
+                            <i class="mdi mdi-plus-list-bulleted menu-icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/writer/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/writer/assets/js/off-canvas.js"></script>
+    <script src="~/writer/assets/js/hoverable-collapse.js"></script>
+    <script src="~/writer/assets/js/misc.js"></script>
+   
+</body>
+</html>

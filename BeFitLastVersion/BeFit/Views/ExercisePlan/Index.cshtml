@@ -1,0 +1,120 @@
+﻿@using EntityLayer.Concrete
+
+@model List<ExerciseProgram>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+
+
+   .card {
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        background-color: rgba(47,79,79,0.6); /* Başlangıçta arka plan yok */
+            color: white;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+            background-color: rgba(73, 80, 87, 0.8); /* Üzerine gelindiğinde gri arka plan */
+        }
+        .card-body {
+            text-align: center;
+            padding: 1.5rem;
+            opacity: 0; /* Başlangıçta görünmez */
+            transition: opacity 0.3s, transform 0.3s; /* Geçiş efekti */
+            transform: translateY(20px); /* Başlangıçta aşağıda konumlandır */
+        }
+        .card:hover .card-body {
+            opacity: 1; /* Üzerine gelindiğinde görünür */
+            transform: translateY(0); /* Üzerine gelindiğinde yukarı çıkar */
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            position: absolute;
+            bottom: 10px; /* Kartın en altında göster */
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam arka plan */
+            padding: 10px;
+            transition: bottom 0.3s, background-color 0.3s, transform 0.3s; /* Geçiş efektleri */
+            z-index: 2; /* Üstte göster */
+            text-align:center;
+        }
+        .card:hover .card-title {
+            bottom: auto; /* Üzerine gelindiğinde konumunu değiştir */
+            position: static;
+            background-color: transparent; /* Arka planı kaldır */
+            transform: translateY(-10px); /* Biraz yukarı çıkar */
+        }
+        .card img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            height: 200px;
+            object-fit: cover;
+            transition: opacity 0.3s; /* Geçiş efekti */
+        }
+        .card:hover img {
+            opacity: 0.3; /* Üzerine gelindiğinde fotoğraf yarı saydam olur */
+        }
+        .btn-secondary {
+        background-color: darkslategray; /* Koyu yeşil */
+        border-color: darkslategray; /* Koyu yeşil */
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            display: none; /* Başlangıçta görünmez */
+            transition: display 0.3s; /* Geçiş efekti */
+        }
+        .card:hover .btn-secondary {
+            display: inline-block; /* Üzerine gelindiğinde görünür */
+        }
+        .container {
+            margin-top: 2rem;
+        }
+</style>
+<div class="container">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    else if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+</div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Card 1 -->
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100" onclick="location.href='link1.html';" style="cursor: pointer;">
+                    <img src="@item.Image" class="card-img-top" alt="Workout 1">
+                    <h5 class="card-title">@item.Title</h5>
+                    <div class="card-body">
+                        <p class="card-text">@item.Description</p>
+                    <td>
+                        <a asp-action="Join" asp-route-exerciseProgramId=@item.ExerciseProgramId asp-route-userId="@ViewBag.UserID" class="btn btn-secondary">Katıl</a>
+                    </td>
+                        <a asp-action="WeekDetails" asp-controller="ExercisePlan" asp-route-exerciseProgramId="@item.ExerciseProgramId" class="btn btn-secondary">Detaylar</a>
+                    </div>
+                </div>
+            </div>
+            }
+           
+        </div>
+    </div>

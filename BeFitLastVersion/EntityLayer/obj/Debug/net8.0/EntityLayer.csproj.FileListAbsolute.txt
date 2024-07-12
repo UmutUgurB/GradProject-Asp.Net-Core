@@ -1,0 +1,14 @@
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\bin\Debug\net8.0\EntityLayer.deps.json
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\bin\Debug\net8.0\EntityLayer.runtimeconfig.json
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\bin\Debug\net8.0\EntityLayer.dll
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\bin\Debug\net8.0\EntityLayer.pdb
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\obj\Debug\net8.0\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\obj\Debug\net8.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\obj\Debug\net8.0\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\obj\Debug\net8.0\EntityLayer.AssemblyInfo.cs
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\obj\Debug\net8.0\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\obj\Debug\net8.0\EntityLayer.dll
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\obj\Debug\net8.0\refint\EntityLayer.dll
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\obj\Debug\net8.0\EntityLayer.pdb
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\obj\Debug\net8.0\EntityLayer.genruntimeconfig.cache
+C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\EntityLayer\obj\Debug\net8.0\ref\EntityLayer.dll

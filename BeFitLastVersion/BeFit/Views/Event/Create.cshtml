@@ -1,0 +1,36 @@
+﻿@using EntityLayer.Concrete
+@model Activity
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2 class="text-center mb-4" style="color: darkslategray;">Etkinlik Oluştur</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group row">
+        <label for="ActivityName" class="col-sm-3 col-form-label">Etkinlik İsmi</label>
+        <div class="col-sm-9">
+            <input asp-for="ActivityName" class="form-control" id="ActivityName">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="ActivityDescription" class="col-sm-3 col-form-label">Etkinlik Açıklaması</label>
+        <div class="col-sm-9">
+            <input asp-for="ActivityDescription" class="form-control" id="ActivityDescription">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="ActivityCapacity" class="col-sm-3 col-form-label">Katılımcı Kapasitesi</label>
+        <div class="col-sm-9">
+            <input asp-for="ActivityCapacity" class="form-control" id="ActivityCapacity">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary btn-block">Oluştur</button>
+        </div>
+    </div>
+</form>
+

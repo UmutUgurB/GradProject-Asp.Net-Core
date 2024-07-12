@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewData["Title"] = "Test";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<style>
+    .question {
+        margin: 20px 0;
+    }
+
+    .buttons {
+        margin-top: 10px;
+    }
+</style>
+
+<div id="survey">
+    <div class="question">
+        <p>1. Soru 1?</p>
+        <div class="buttons">
+            <button onclick="vote('site1', 'q1', 'yes')">Evet</button>
+            <button onclick="vote('site1', 'q1', 'no')">Hayır</button>
+        </div>
+    </div>
+    <div class="question">
+        <p>2. Soru 2?</p>
+        <div class="buttons">
+            <button onclick="vote('site1', 'q2', 'yes')">Evet</button>
+            <button onclick="vote('site1', 'q2', 'no')">Hayır</button>
+        </div>
+    </div>
+    <div class="question">
+        <p>3. Soru 3?</p>
+        <div class="buttons">
+            <button onclick="vote('site1', 'q3', 'yes')">Evet</button>
+            <button onclick="vote('site1', 'q3', 'no')">Hayır</button>
+        </div>
+    </div>
+    <div class="question">
+        <p>4. Soru 4?</p>
+        <div class="buttons">
+            <button onclick="vote('site1', 'q4', 'yes')">Evet</button>
+            <button onclick="vote('site1', 'q4', 'no')">Hayır</button>
+        </div>
+    </div>
+    <div class="question">
+        <p>5. Soru 5?</p>
+        <div class="buttons">
+            <button onclick="vote('site1', 'q5', 'yes')">Evet</button>
+            <button onclick="vote('site1', 'q5', 'no')">Hayır</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function vote(site, question, answer) {
+        const key = `${site}_${question}`;
+        let votes = JSON.parse(localStorage.getItem(key)) || { yes: 0, no: 0 };
+        votes[answer]++;
+        localStorage.setItem(key, JSON.stringify(votes));
+        renderChart(site);
+    }
+
+    function renderChart(site) {
+        const ctx = document.getElementById('chart').getContext('2d');
+        const data = {
+            labels: ['Soru 1', 'Soru 2', 'Soru 3', 'Soru 4', 'Soru 5'],
+            datasets: [
+                {
+                    label: 'Evet',
+                    borderColor: 'green',
+                    fill: false,
+                    data: [
+                        JSON.parse(localStorage.getItem(`${site}_q1`))?.yes || 0,
+                        JSON.parse(localStorage.getItem(`${site}_q2`))?.yes || 0,
+                        JSON.parse(localStorage.getItem(`${site}_q3`))?.yes || 0,
+                        JSON.parse(localStorage.getItem(`${site}_q4`))?.yes || 0,
+                        JSON.parse(localStorage.getItem(`${site}_q5`))?.yes || 0
+                    ]
+                },
+                {
+                    label: 'Hayır',
+                    borderColor: 'red',
+                    fill: false,
+                    data: [
+                        JSON.parse(localStorage.getItem(`${site}_q1`))?.no || 0,
+                        JSON.parse(localStorage.getItem(`${site}_q2`))?.no || 0,
+                        JSON.parse(localStorage.getItem(`${site}_q3`))?.no || 0,
+                        JSON.parse(localStorage.getItem(`${site}_q4`))?.no || 0,
+                        JSON.parse(localStorage.getItem(`${site}_q5`))?.no || 0
+                    ]
+                }
+            ]
+        };
+
+        new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    window.onload = function () {
+        renderChart('site1');
+    }
+</script>

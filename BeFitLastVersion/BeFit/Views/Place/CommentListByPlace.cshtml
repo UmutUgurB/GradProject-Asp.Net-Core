@@ -1,0 +1,162 @@
+﻿@using EntityLayer.Concrete
+@model List<Comment>
+@{
+    ViewData["Title"] = "CommentListByPlace";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+
+    .container {
+        margin-top: 50px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Arial, sans-serif;
+    }
+
+    .average-score-container {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .average-score-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #856404;
+        margin-bottom: 10px;
+    }
+
+    .average-score-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .average-score-item {
+        font-size: 18px;
+        color: #212529;
+        margin: 0 10px;
+    }
+
+    .stars {
+        display: inline-block;
+        color: #ffc107;
+        font-size: 24px;
+    }
+
+    .comment {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .comment-user {
+        font-size: 18px;
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 5px;
+    }
+
+    .comment-title {
+        font-size: 16px;
+        color: #28a745;
+        margin-bottom: 5px;
+    }
+
+    .comment-content {
+        font-size: 14px;
+        color: #343a40;
+        margin-bottom: 10px;
+    }
+
+    .comment-image {
+        width: 120px;
+        height: 120px;
+        background-color: #e9ecef;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+        .comment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .comment-body {
+        flex-grow: 1;
+    }
+
+    .no-comments {
+        font-size: 18px;
+        color: #6c757d;
+    }
+</style>
+
+    @if (ViewBag.ort != null && ViewBag.ort.Count > 0)
+    {
+    <div class="container">
+        <div class="average-score-container">
+            <div class="average-score-title">İşletmenin Puan Ortalaması</div>
+            <ul class="average-score-list">
+                    @foreach (var ort in ViewBag.ort)
+                    {
+                    <li class="average-score-item">
+                        <span class="stars">
+                                @for (int i = 0; i < (int)ort; i++)
+                                {
+                                <i class="fas fa-star"></i>
+                                }
+                                @for (int i = 0; i < 10 - (int)ort; i++)
+                                {
+                                <i class="far fa-star"></i>
+                                }
+                        </span>
+                        <span>@ort / 10</span>
+                    </li>
+                    }
+            </ul>
+        </div>
+    </div>
+    }
+
+<div class="container">
+    <h2>Yorumlar</h2>
+        @if (Model == null || !Model.Any())
+        {
+        <p class="no-comments">Henüz yorum bulunmamaktadır.</p>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+            <div class="comment">
+                <a href="~/CommentImageFolder/@item.CommentImage" target="_blank" class="comment-image">
+                    <img src="~/CommentImageFolder/@item.CommentImage" alt="User Image">
+                </a>
+                <div class="comment-body">
+                    <div class="comment-user">Kullanıcı Adı: @item.CommentUserName</div>
+                    <div class="comment-title">Başlık: @item.CommentTitle</div>
+                    <div class="comment-content">Yorum: @item.CommentContent</div>
+                    <div class="comment-content"><b>Bu İşletmeye Verilen Puan:</b> <i>@item.PlaceScore</i></div>
+                </div>
+            </div>
+            }
+        }
+</div>
+
+<!-- Add Font Awesome for star icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+

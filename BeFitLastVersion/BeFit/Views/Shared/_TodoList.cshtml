@@ -1,0 +1,89 @@
+﻿<style>
+    .todo-container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .todo-title {
+        color: #155724;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .list-group-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #e9ecef;
+        border: 1px solid #ced4da;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .todo-remove-button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 5px 10px;
+    }
+
+        .todo-remove-button:hover {
+            background-color: #c82333;
+        }
+
+    .todo-input input {
+        font-size: 1.2rem;
+        border-radius: 5px;
+    }
+
+    .todo-input button {
+        font-size: 1.2rem;
+    }
+</style>
+
+
+
+<div class="container todo-container mt-5 p-4">
+    <h1 class="todo-title text-center mb-4">Todo List</h1>
+    <div class="todo-input input-group mb-3">
+        <input type="text" id="taskInput" class="form-control" placeholder="New Task">
+        <div class="input-group-append">
+            <button onclick="addTask()" class="btn btn-success">Add</button>
+        </div>
+    </div>
+    <ul id="taskList" class="list-group"></ul>
+</div>
+            <script>
+
+    function addTask() {
+        const taskInput = document.getElementById('taskInput');
+        const taskList = document.getElementById('taskList');
+
+        if (taskInput.value.trim() === "") {
+            alert("Please enter a task.");
+            return;
+        }
+
+        const li = document.createElement('li');
+        li.textContent = taskInput.value;
+        li.className = 'list-group-item';
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.className = 'btn btn-danger btn-sm todo-remove-button';
+        removeButton.onclick = function () {
+            taskList.removeChild(li);
+        };
+
+        li.appendChild(removeButton);
+        taskList.appendChild(li);
+
+        taskInput.value = '';
+    }
+
+            </script>

@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spor Programı Anketi</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #f9f9f9;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .progress-bar {
+            height: 10px;
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .question {
+            display: none;
+        }
+
+            .question.active {
+                display: block;
+            }
+
+            .question label {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 1.1em;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .question select {
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                font-size: 1em;
+                margin-bottom: 20px;
+            }
+
+        .submit-btn, .next-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+            .submit-btn:hover, .next-btn:hover {
+                background-color: #45a049;
+            }
+
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-align: center;
+            color: #4caf50;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Senin İçin En Uygun Spor Programını Bul</h2>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <form id="fitness-form">
+            <!-- Questions -->
+            <div class="question active" id="q1">
+                <label for="q1-select">1. Ne sıklıkla egzersiz yapıyorsunuz?</label>
+                <select id="q1-select" name="q1">
+                    <option value="1">1 - Çok nadir</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Her gün</option>
+                </select>
+            </div>
+            <div class="question" id="q2">
+                <label for="q2-select">2. Kardiyo egzersizleri yapmaktan hoşlanır mısınız?</label>
+                <select id="q2-select" name="q2">
+                    <option value="1">1 - Hiç hoşlanmam</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Çok hoşlanırım</option>
+                </select>
+            </div>
+            <div class="question" id="q3">
+                <label for="q3-select">3. Ağırlık kaldırma konusunda ne kadar tecrübelisiniz?</label>
+                <select id="q3-select" name="q3">
+                    <option value="1">1 - Hiç tecrübem yok</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Çok tecrübeliyim</option>
+                </select>
+            </div>
+            <div class="question" id="q4">
+                <label for="q4-select">4. Spor salonuna gitmekten hoşlanır mısınız?</label>
+                <select id="q4-select" name="q4">
+                    <option value="1">1 - Hiç hoşlanmam</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Çok hoşlanırım</option>
+                </select>
+            </div>
+            <div class="question" id="q5">
+                <label for="q5-select">5. Ne kadar süredir düzenli egzersiz yapıyorsunuz?</label>
+                <select id="q5-select" name="q5">
+                    <option value="1">1 - Henüz başlamadım</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Bir yıldan fazla</option>
+                </select>
+            </div>
+            <div class="question" id="q6">
+                <label for="q6-select">6. Bir antrenmana ne kadar zaman ayırabilirsin?</label>
+                <select id="q6-select" name="q6">
+                    <option value="1">1 - 15 dakikadan az</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - 1 saatten fazla</option>
+                </select>
+            </div>
+            <div class="question" id="q7">
+                <label for="q7-select">7. Egzersiz programınıza devam ederken motivasyon problemi yaşıyor musunuz ? </label>
+                <select id="q7-select" name="q7">
+                    <option value="1">1 - Hiç motive değilim</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Çok motiveyim</option>
+                </select>
+            </div>
+            <div class="question" id="q8">
+                <label for="q8-select">8. Spor salonuna gitme sıklığınız nedir?</label>
+                <select id="q8-select" name="q8">
+                    <option value="1">1 - Hiç gitmiyorum</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Haftada birkaç kez</option>
+                </select>
+            </div>
+            <div class="question" id="q9">
+                <label for="q9-select">9. Grup egzersizlerine katılmayı sever misiniz?</label>
+                <select id="q9-select" name="q9">
+                    <option value="1">1 - Hiç sevmem</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Çok severim</option>
+                </select>
+            </div>
+            <div class="question" id="q10">
+                <label for="q10-select">10. Dayanıklılık gerektiren egzersizleri ne kadar yapabilirsiniz?</label>
+                <select id="q10-select" name="q10">
+                    <option value="1">1 - Çok kısa süre</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Çok uzun süre</option>
+                </select>
+            </div>
+            <div class="question" id="q11">
+                <label for="q11-select">11. Spor yaparken en çok neye odaklanırsınız?</label>
+                <select id="q11-select" name="q11">
+                    <option value="1">1 - Eğlenmek</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Performans artırmak</option>
+                </select>
+            </div>
+            <div class="question" id="q12">
+                <label for="q12-select">12. Egzersiz sonrası kendinizi nasıl hissedersiniz?</label>
+                <select id="q12-select" name="q12">
+                    <option value="1">1 - Çok yorgun</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Çok enerjik</option>
+                </select>
+            </div>
+            <!-- Navigation buttons -->
+            <button type="button" class="next-btn" id="next-btn">Sonraki Soru</button>
+            <button type="submit" class="submit-btn" id="submit-btn" style="display: none;">Sonuçları Göster</button>
+        </form>
+        <div class="result" id="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('fitness-form');
+            const questions = document.querySelectorAll('.question');
+            const progress = document.getElementById('progress');
+            const nextBtn = document.getElementById('next-btn');
+            const submitBtn = document.getElementById('submit-btn');
+            const resultDiv = document.getElementById('result');
+            let currentQuestion = 0;
+
+            function showQuestion(index) {
+                questions.forEach((question, idx) => {
+                    question.classList.toggle('active', idx === index);
+                });
+                progress.style.width = `${((index + 1) / questions.length) * 100}%`;
+
+                if (index === questions.length - 1) {
+                    nextBtn.style.display = 'none';
+                    submitBtn.style.display = 'block';
+                } else {
+                    nextBtn.style.display = 'block';
+                    submitBtn.style.display = 'none';
+                }
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    showQuestion(currentQuestion);
+                }
+            });
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                let totalScore = 0;
+                const formData = new FormData(form);
+
+                for (let value of formData.values()) {
+                    totalScore += parseInt(value, 10);
+                }
+
+                let resultMessage = '';
+                if (totalScore >= 1 && totalScore <= 10) {
+                    resultMessage = 'Asker programına uygunsunuz';
+                } else if (totalScore > 10 && totalScore <= 20) {
+                    resultMessage = 'Gladyatör programına uygunsunuz';
+                } else if (totalScore > 20 && totalScore <= 30) {
+                    resultMessage = 'Şampiyonun Yolu programını yapmaya uygunsunuz';
+                } else if (totalScore > 30 && totalScore <= 40) {
+                    resultMessage = 'Savaşçı spor programını yapmaya uygunsunuz';
+                } else if (totalScore > 40 && totalScore <= 50) {
+                    resultMessage = 'Mamba spor programını yapmaya uygunsunuz';
+                } else if (totalScore > 50 && totalScore <= 60) {
+                    resultMessage = 'Şampiyon spor programını yapmaya uygunsunuz';
+                } else {
+                    resultMessage = 'Geçersiz puan';
+                }
+
+                resultDiv.textContent = resultMessage;
+                resultDiv.style.display = 'block';
+            });
+
+            showQuestion(currentQuestion);
+        });
+    </script>
+</body>
+</html>

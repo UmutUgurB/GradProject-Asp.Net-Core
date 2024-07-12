@@ -1,0 +1,109 @@
+﻿<style>
+    body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Yatay kaydırmayı önleyin */
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Arka plan için yarı şeffaf siyah */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.text-overlay h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.text-overlay h2 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.text-overlay p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+
+</style>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<body>
+<header class="header">
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+                <img src="https://t3.ftcdn.net/jpg/05/79/48/52/360_F_579485255_hzHox0stuQmBx5QViwnQqQjk7RD2AJza.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+                <img src="https://wallpapercave.com/wp/wp4013886.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="https://www.workitdaily.com/media-library/a-group-of-sports-fans-work-together-in-an-office-setting.jpg?id=26149348&width=1200&height=800&quality=85&coordinates=0%2C0%2C0%2C0" style="width:100%">
+        </div>
+    </div>
+    <div class="text-overlay">
+        <h1>B-Fit</h1>
+        <h2>Sosyal Ofis</h2>
+        <p>Projemiz, modern ve işbirlikçi bir çalışma ortamı sunmayı amaçlamaktadır. B-Fit Sosyal Ofis, çalışanlarınızın sağlığını ve verimliliğini artırmak için tasarlanmıştır. Yenilikçi ofis çözümleriyle işyerinizde pozitif bir değişim yaratın.</p>
+    </div>
+</header>
+</body>
+<script>
+
+    let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex - 1].style.display = "block";  
+    setTimeout(showSlides, 3000); // 3 saniyede bir geçiş
+}
+
+
+</script>

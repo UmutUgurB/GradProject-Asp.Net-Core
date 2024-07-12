@@ -1,0 +1,184 @@
+﻿@using EntityLayer.Concrete
+@model List<Exercise>
+
+
+
+@{
+    ViewData["Title"] = "ExerciseList";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    #searchInput {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f9f9f9;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table tr:hover {
+            background-color: #e5e5e5;
+            transition: background-color 0.3s ease;
+        }
+
+    .pagination {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+        .pagination button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+            .pagination button:disabled {
+                background-color: #cccccc;
+            }
+</style>
+
+
+<div class="container">
+    <input type="text" id="searchInput" placeholder="Ara..." onkeyup="searchTable()">
+    <div class="table-container">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Egzersiz Adı</th>
+                    <th>Açıklama</th>
+                    <th>Videolu Anlatım</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ExerciseName</td>
+                        <td>@item.ExerciseDescription</td>
+                        <td>
+                            <a href="@item.ExerciseVideo" target="_blank">
+                                <img class="youtube-thumbnail" data-video-url="@item.ExerciseVideo" alt="Video" width="120">
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <button id="prevPage" onclick="changePage(-1)">Önceki</button>
+        <button id="nextPage" onclick="changePage(1)">Sonraki</button>
+    </div>
+</div>
+
+<script>
+    const rowsPerPage = 10;
+    let currentPage = 1;
+
+    function getYouTubeID(url) {
+        const urlObj = new URL(url);
+        return urlObj.searchParams.get("v") || urlObj.pathname.split('/').pop();
+    }
+
+    function updateYouTubeThumbnails() {
+        const thumbnails = document.querySelectorAll('.youtube-thumbnail');
+        thumbnails.forEach(thumbnail => {
+            const videoUrl = thumbnail.getAttribute('data-video-url');
+            const videoId = getYouTubeID(videoUrl);
+            thumbnail.src = `https://img.youtube.com/vi/${videoId}/0.jpg`;
+        });
+    }
+
+    function searchTable() {
+        const input = document.getElementById("searchInput");
+        const filter = input.value.toUpperCase();
+        const table = document.getElementById("dataTable");
+        const tr = table.getElementsByTagName("tr");
+
+        let visibleRows = 0;
+        for (let i = 1; i < tr.length; i++) {
+            const td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                const txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    visibleRows++;
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+        currentPage = 1; // Reset to first page when searching
+        paginate(visibleRows);
+    }
+
+    function paginate(visibleRows = null) {
+        const table = document.getElementById("dataTable");
+        const tr = table.getElementsByTagName("tr");
+        const totalRows = visibleRows !== null ? visibleRows : tr.length - 1;
+        const totalPages = Math.ceil(totalRows / rowsPerPage);
+
+        for (let i = 1; i < tr.length; i++) {
+            if (i > currentPage * rowsPerPage || i <= (currentPage - 1) * rowsPerPage) {
+                tr[i].style.display = "none";
+            } else {
+                tr[i].style.display = "";
+            }
+        }
+
+        document.getElementById("prevPage").disabled = currentPage === 1;
+        document.getElementById("nextPage").disabled = currentPage === totalPages;
+    }
+
+    function changePage(direction) {
+        currentPage += direction;
+        paginate();
+    }
+
+    // Initial call to setup pagination and update thumbnails
+    window.onload = () => {
+        paginate();
+        updateYouTubeThumbnails();
+    };
+</script>

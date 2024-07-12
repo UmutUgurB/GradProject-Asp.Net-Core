@@ -1,0 +1,311 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BeFit
+build_property.RootNamespace = BeFit
+build_property.ProjectDir = C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\BeFit\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\umutu\OneDrive\Masaüstü\BeFitLastVersion\BeFit
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/AboutUs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRVc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Admin/Best.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQmVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Admin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Admin/MemberList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWVtYmVyTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Contact/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Contact/MessageList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxNZXNzYWdlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Event/AddEvent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQWRkRXZlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Event/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Event/EventOrganizer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRXZlbnRPcmdhbml6ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Event/MyActivity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcTXlBY3Rpdml0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Event/MyEventList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcTXlFdmVudExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Event/Participants.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcUGFydGljaXBhbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Event/UserActivities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcVXNlckFjdGl2aXRpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/Champion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXENoYW1waW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/ChampionWay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXENoYW1waW9uV2F5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/ExercisePlanForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXEV4ZXJjaXNlUGxhbkZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/Gladiator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXEdsYWRpYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/Mamba.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXE1hbWJhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/Soldier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXFNvbGRpZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/UserExercisePrograms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXFVzZXJFeGVyY2lzZVByb2dyYW1zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/Warrior.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXFdhcnJpb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/ExercisePlan/WeekDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VQbGFuXFdlZWtEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Exercise/AllExercises.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VcQWxsRXhlcmNpc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Exercise/BurnCaloryExerciseList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VcQnVybkNhbG9yeUV4ZXJjaXNlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Exercise/ExerciseCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VcRXhlcmNpc2VDYXRlZ29yaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Exercise/ExerciseList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VcRXhlcmNpc2VMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Exercise/LowerBodyExerciseList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VcTG93ZXJCb2R5RXhlcmNpc2VMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Exercise/MyExerciseProgram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VcTXlFeGVyY2lzZVByb2dyYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Exercise/ProtectYourselfExerciseList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VcUHJvdGVjdFlvdXJzZWxmRXhlcmNpc2VMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Exercise/SixPackExerciseList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhlcmNpc2VcU2l4UGFja0V4ZXJjaXNlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/FirstPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyc3RQYWdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/LandingPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFuZGluZ1BhZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Meal/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Mental/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudGFsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Message/InBox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxJbkJveC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Message/MessageDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxNZXNzYWdlRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Message/SendMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxTZW5kTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Place/AddComment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhY2VcQWRkQ29tbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Place/AddPlace.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhY2VcQWRkUGxhY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Place/CommentListByPlace.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhY2VcQ29tbWVudExpc3RCeVBsYWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Place/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhY2VcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Place/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhY2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Quiz/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Quiz/TakeAProgram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxUYWtlQVByb2dyYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Register/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Shared/Components/UserMessageNotification/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVXNlck1lc3NhZ2VOb3RpZmljYXRpb25cRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Shared/_Carousel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJvdXNlbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Shared/_TodoList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ub2RvTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/SportProgram/BMICalculator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BvcnRQcm9ncmFtXEJNSUNhbGN1bGF0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/SportProgram/ExerciseProgram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BvcnRQcm9ncmFtXEV4ZXJjaXNlUHJvZ3JhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/SportProgram/KTSTest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BvcnRQcm9ncmFtXEtUU1Rlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/User/AssignExerciseProgram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBc3NpZ25FeGVyY2lzZVByb2dyYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/User/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxUZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/User/UserMail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyTWFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/User/UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/User/UserSettings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyU2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umutu/OneDrive/Masaüstü/BeFitLastVersion/BeFit/Views/Shared/_UserLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-mjo1krht6u

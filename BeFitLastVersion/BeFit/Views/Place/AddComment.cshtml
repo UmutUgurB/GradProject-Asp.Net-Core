@@ -1,0 +1,63 @@
+﻿@model BeFit.Models.AddCommentImage
+
+@{
+    ViewData["Title"] = "AddComment";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<form class="form-group" method="post" enctype="multipart/form-data" >
+
+    @Html.HiddenFor(x => x.CommentID, new { @class = "form-control" })
+    <div class="form-sample">
+        <div class="form-group">
+            <label>Kullanıcı Adınız:</label>
+            @Html.TextBoxFor(x => x.CommentUserName, new { @class = "form-control" ,required = "required" })
+            <span class="error-message"></span>
+        </div>
+        <div class="form-group">
+            <label>Yorum Başlığı</label>
+            @Html.TextBoxFor(x => x.CommentTitle, new { @class = "form-control", required = "required" })
+            <span class="error-message"></span>
+        </div>
+        <div class="form-group">
+            <label>Yorumunuz</label>
+            @Html.TextBoxFor(x => x.CommentContent, new { @class = "form-control", required = "required" })
+            <span class="error-message"></span>
+        </div>
+        <div class="form-group">
+            <label>İşletmeye Puanınız: </label>
+            @Html.TextBoxFor(x => x.PlaceScore, new { @class = "form-control", type = "number", min = "0", max = "10", required = "required" })
+            <span class="error-message"></span>
+        </div>
+        <div class="form-group">
+            <label>Mekan Görseli</label>
+            <input type="file" name="CommentImage" required />
+            <span class="error-message"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+
+</form>
+<script>
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+    let isValid = true;
+    const formControls = document.querySelectorAll('.form-control');
+    formControls.forEach(function(input) {
+        const errorMessage = input.nextElementSibling;
+        if (!input.value) {
+            errorMessage.textContent = 'Bu alan boş bırakılamaz';
+            errorMessage.style.display = 'block';
+            isValid = false;
+        } else {
+            errorMessage.style.display = 'none';
+        }
+    });
+
+    if (!isValid) {
+        event.preventDefault();
+    }
+});
+
+</script>

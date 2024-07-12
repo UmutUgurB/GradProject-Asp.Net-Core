@@ -1,0 +1,62 @@
+﻿
+<form asp-controller="User" asp-action="AssignExerciseProgram" method="post" onsubmit="return assignExerciseProgram()">
+    <!-- Soru cevapları -->
+    <h3>Soru 1:</h3>
+    <label for="answer1">Cevap:</label>
+    <input type="number" id="answer1" name="answer1" min="1" max="5" />
+    <br />
+    <h3>Soru 2:</h3>
+    <label for="answer2">Cevap:</label>
+    <input type="number" id="answer2" name="answer2" min="1" max="5" />
+    <br />
+    <h3>Soru 3:</h3>
+    <label for="answer3">Cevap:</label>
+    <input type="number" id="answer3" name="answer3" min="1" max="5" />
+    <br />
+    <h3>Soru 4:</h3>
+    <label for="answer4">Cevap:</label>
+    <input type="number" id="answer4" name="answer4" min="1" max="5" />
+    <br />
+    <h3>Soru 5:</h3>
+    <label for="answer5">Cevap:</label>
+    <input type="number" id="answer5" name="answer5" min="1" max="5" />
+    <br />
+    <button type="submit">Spor Programını Ata</button>
+</form>
+
+<script>
+    function assignExerciseProgram() {
+        // Kullanıcı cevaplarını al
+        var answer1 = parseInt(document.getElementById('answer1').value);
+        var answer2 = parseInt(document.getElementById('answer2').value);
+        var answer3 = parseInt(document.getElementById('answer3').value);
+        var answer4 = parseInt(document.getElementById('answer4').value);
+        var answer5 = parseInt(document.getElementById('answer5').value);
+
+        // Toplamı hesapla
+        var total = answer1 + answer2 + answer3 + answer4 + answer5;
+
+        // Spor programını belirle
+        var exerciseProgramName = '';
+        if (total >= 1 && total <= 10) {
+            exerciseProgramName = 'Piyade';
+        } else if (total >= 11 && total <= 20) {
+            exerciseProgramName = 'Asker';
+        } else if (total >= 21 && total <= 30) {
+            exerciseProgramName = 'Gladyatör';
+        } else if (total >= 31 && total <= 40) {
+            exerciseProgramName = 'Savaşçı';
+        } else if (total >= 41 && total <= 50) {
+            exerciseProgramName = 'Şampiyon';
+        } else {
+            alert('Lütfen her soruya 1-5 arası bir puan verin.');
+            return false;
+        }
+
+        // Spor programını gizli alana ata
+        document.getElementById('exerciseProgramName').value = exerciseProgramName;
+
+        return true;
+    }
+</script>
+

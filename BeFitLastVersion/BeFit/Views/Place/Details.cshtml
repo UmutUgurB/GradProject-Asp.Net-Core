@@ -1,0 +1,11 @@
+﻿@using EntityLayer.Concrete
+@model List<Place>
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+@foreach(var item in Model)
+{
+    <p>@item.PlaceDescription</p>
+}

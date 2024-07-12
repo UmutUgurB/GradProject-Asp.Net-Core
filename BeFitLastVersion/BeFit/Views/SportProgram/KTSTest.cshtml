@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewData["Title"] = "KTSTest";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .question {
+        margin-bottom: 15px;
+    }
+
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .question input {
+            margin-right: 10px;
+        }
+
+    button {
+        display: block;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    #result {
+        margin-top: 20px;
+        font-size: 18px;
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <h1>Karpal Tünel Sendromu Testi</h1>
+    <form id="karpalTest">
+        <div class="question" id="q1">
+            <label>1. El ve bilek ağrısı yaşıyor musunuz?</label>
+            <input type="radio" name="q1" value="yes"> Evet
+            <input type="radio" name="q1" value="no"> Hayır
+            <button type="button" onclick="nextQuestion(1)">Sonraki</button>
+        </div>
+        <div class="question" id="q2" style="display: none;">
+            <label>2. Parmaklarda uyuşma veya karıncalanma hissi yaşıyor musunuz?</label>
+            <input type="radio" name="q2" value="yes"> Evet
+            <input type="radio" name="q2" value="no"> Hayır
+            <button type="button" onclick="nextQuestion(2)">Sonraki</button>
+        </div>
+        <div class="question" id="q3" style="display: none;">
+            <label>3. Gece uyandığınızda el veya bileğinizde ağrı hissediyor musunuz?</label>
+            <input type="radio" name="q3" value="yes"> Evet
+            <input type="radio" name="q3" value="no"> Hayır
+            <button type="button" onclick="nextQuestion(3)">Sonraki</button>
+        </div>
+        <div class="question" id="q4" style="display: none;">
+            <label>4. Küçük nesneleri tutmakta zorlanıyor musunuz?</label>
+            <input type="radio" name="q4" value="yes"> Evet
+            <input type="radio" name="q4" value="no"> Hayır
+            <button type="button" onclick="nextQuestion(4)">Sonraki</button>
+        </div>
+        <div class="question" id="q5" style="display: none;">
+            <label>5. El ve bilekte güçsüzlük hissediyor musunuz?</label>
+            <input type="radio" name="q5" value="yes"> Evet
+            <input type="radio" name="q5" value="no"> Hayır
+            <button type="button" onclick="nextQuestion(5)">Sonraki</button>
+        </div>
+        <div class="question" id="q6" style="display: none;">
+            <label>6. El ve bilekte şişlik veya rahatsızlık hissi yaşıyor musunuz?</label>
+            <input type="radio" name="q6" value="yes"> Evet
+            <input type="radio" name="q6" value="no"> Hayır
+            <button type="button" onclick="nextQuestion(6)">Sonraki</button>
+        </div>
+        <div class="question" id="q7" style="display: none;">
+            <label>7. El ve bilekte tekrarlayan hareketler yapıyor musunuz?</label>
+            <input type="radio" name="q7" value="yes"> Evet
+            <input type="radio" name="q7" value="no"> Hayır
+            <button type="button" onclick="nextQuestion(7)">Sonraki</button>
+        </div>
+        <div class="question" id="q8" style="display: none;">
+            <label>8. El ve bileğinizde ağrı, uyuşma veya karıncalanma nedeniyle iş yaparken zorlanıyor musunuz?</label>
+            <input type="radio" name="q8" value="yes"> Evet
+            <input type="radio" name="q8" value="no"> Hayır
+            <button type="button" onclick="evaluateTest()">Testi Tamamla</button>
+        </div>
+    </form>
+    <div id="result"></div>
+</div>
+
+            <script>
+    function nextQuestion(currentQuestion) {
+        const currentQuestionElement = document.getElementById(`q${currentQuestion}`);
+        const nextQuestionElement = document.getElementById(`q${currentQuestion + 1}`);
+
+        if (document.querySelector(`input[name="q${currentQuestion}"]:checked`)) {
+            currentQuestionElement.style.display = 'none';
+            nextQuestionElement.style.display = 'block';
+        } else {
+            alert('Lütfen bu soruyu cevaplayın.');
+        }
+    }
+
+    function evaluateTest() {
+        const questions = document.querySelectorAll('.question input[type="radio"]:checked');
+
+        if (questions.length < 8) {
+            alert('Lütfen tüm soruları cevaplayın.');
+            return;
+        }
+
+        let score = 0;
+        questions.forEach((question) => {
+            if (question.value === 'yes') {
+                score++;
+            }
+        });
+
+        let resultText = '';
+        if (score >= 6) {
+            resultText = 'Karpal Tünel Sendromu riski yüksek. Bir sağlık profesyoneline danışmalısınız.';
+        } else if (score >= 3) {
+            resultText = 'Orta derecede Karpal Tünel Sendromu riski. Belirtileriniz devam ederse bir sağlık profesyoneline danışın.';
+        } else {
+            resultText = 'Karpal Tünel Sendromu riski düşük. Ancak belirtileriniz devam ederse bir sağlık profesyoneline danışın.';
+        }
+
+        document.getElementById('result').innerText = resultText;
+    }
+            </script>

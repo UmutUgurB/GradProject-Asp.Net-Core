@@ -1,0 +1,124 @@
+﻿@model EntityLayer.Concrete.User
+
+
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #283747;
+        }
+
+        .login-container {
+            margin-top: 100px;
+        }
+
+        .card {
+            border: 1px solid #16a085;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #34495e;
+            color: #fff;
+        }
+
+        .card-title {
+            font-weight: bold;
+            color: #16a085;
+        }
+
+        .btn-login {
+            background-color: #16a085;
+            border-color: #16a085;
+        }
+
+            .btn-login:hover {
+                background-color: #138d75;
+                border-color: #138d75;
+            }
+
+        .form-control {
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+            .form-control:focus {
+                background-color: #34495e;
+                color: #fff;
+                border-color: #16a085;
+                box-shadow: none;
+            }
+
+            .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
+
+        .form-group label {
+            color: #16a085;
+        }
+
+            .form-group label:focus {
+                color: #16a085;
+            }
+
+            .form-group label::after {
+                color: #16a085;
+            }
+
+            .form-group label::before {
+                background-color: #16a085;
+            }
+    </style>
+    
+</head>
+<body>
+    <partial name="_Carousel" />
+    <br /><br />
+    <div class="container login-container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Kayıt OL</h3>
+                        @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                @Html.TextBoxFor(x=>x.UserEmail, new{@class ="form-control"})
+                                @Html.ValidationMessageFor(x => x.UserEmail, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label >Adınız&Soyadınız</label>
+                                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.UserName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control", id = "UserPassword", type ="password" })
+                                @Html.ValidationMessageFor(x => x.UserPassword, "", new { @class = "text-danger" })
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block btn-login">Kayıt Ol</button>
+                        }
+                        <div class="text-center mt-3">       
+                            <p>Zaten Bir Hesabım Var! <a asp-controller="Login" asp-action="Login">Giriş Yap</a></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

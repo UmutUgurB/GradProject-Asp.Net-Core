@@ -1,0 +1,179 @@
+﻿@model EntityLayer.Concrete.User
+
+@{
+    ViewData["Title"] = "UserSettings";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+
+
+    .container {
+        background-color: #3C5C5E;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group .password-container {
+            display: flex;
+            align-items: center;
+        }
+
+            .form-group .password-container input[type="password"],
+            .form-group .password-container input[type="text"] {
+                flex: 1;
+            }
+
+            .form-group .password-container button {
+                margin-left: 10px;
+                padding: 10px;
+                background-color: #555;
+                border: none;
+                border-radius: 4px;
+                color: white;
+                cursor: pointer;
+            }
+
+        .form-group img {
+            display: block;
+            margin: 0 auto 10px;
+            width: 120px; /* Genişliği 120px olarak ayarladık */
+            height: 120px; /* Yüksekliği 120px olarak ayarladık */
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #2F4F4F;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            .form-group input[type="submit"]:hover {
+                background-color: #1E2E2E;
+            }
+
+    .text-center button {
+        margin: 5px;
+    }
+</style>
+
+<h1 class="text-center mb-4">Kullanıcı Ayarları</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("UserSettings", "User", FormMethod.Post, new { enctype = "multipart/form-data", @class = "needs-validation", novalidate = "novalidate" }))
+            {
+                <div class="form-group text-center">
+                    <label for="UserImage">Profil Resmi</label>
+                    <img id="profileImage" src="@Url.Content(Model.UserImage )" alt="User Image" />
+                    <input type="file" id="UserImage" name="UserImage" accept="image/*" class="form-control-file" onchange="loadFile(event)" />
+                </div>
+                <div class="form-group">
+                    <label for="UserName">Kullanıcı Adı</label>
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", required = "required" })
+                    <div class="invalid-feedback">
+                        Lütfen geçerli bir kullanıcı adı girin.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="UserEmail">E-Mail</label>
+                    @Html.TextBoxFor(x => x.UserEmail, new { @class = "form-control", required = "required" })
+                    <div class="invalid-feedback">
+                        Lütfen geçerli bir e-posta girin.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="UserPassword">Şifre</label>
+                    <div class="password-container">
+                        @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control", type = "password", id = "userPassword", required = "required" })
+                        <button type="button" onclick="togglePassword()">Göster</button>
+                    </div>
+                    <div class="invalid-feedback">
+                        Lütfen geçerli bir şifre girin.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="UserHeight">Boyunuz</label>
+                    @Html.TextBoxFor(x => x.UserHeight, new { @class = "form-control", type = "number", required = "required" })
+                    <div class="invalid-feedback">
+                        Lütfen geçerli bir boy girin.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="UserWeight">Kilonuz</label>
+                    @Html.TextBoxFor(x => x.UserWeight, new { @class = "form-control", type = "number", required = "required" })
+                    <div class="invalid-feedback">
+                        Lütfen geçerli bir kilo girin.
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <a href="#" class="btn btn-secondary">İptal</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    function togglePassword() {
+        var passwordInput = document.getElementById('userPassword');
+        var toggleButton = event.target;
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleButton.textContent = 'Gizle';
+        } else {
+            passwordInput.type = 'password';
+            toggleButton.textContent = 'Göster';
+        }
+    }
+
+    function loadFile(event) {
+        var image = document.getElementById('profileImage');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+
+    // Enable Bootstrap validation
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>

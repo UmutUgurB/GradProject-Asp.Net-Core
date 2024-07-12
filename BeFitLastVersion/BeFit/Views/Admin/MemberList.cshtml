@@ -1,0 +1,83 @@
+﻿@using EntityLayer.Concrete
+@model List<User>
+@{
+    ViewData["Title"] = "Kullanıcı Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .table-sm th, .table-sm td {
+    padding: .3rem;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+</style>
+
+<div class="container mt-3">
+    <div class="row mb-2">
+        <div class="col-md-4">
+            <input type="text" id="searchInput" class="form-control" placeholder="Ara...">
+        </div>
+    </div>
+
+    @if (ViewBag.SuccessMessage != null)
+    {
+        <div class="alert alert-success">
+            @ViewBag.SuccessMessage
+        </div>
+    }
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+
+    <table class="table table-striped table-sm table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Kullanıcı Adı</th>
+                <th scope="col">Mail</th>
+                <th scope="col" class="text-center">İşlem</th>
+            </tr>
+        </thead>
+        <tbody id="userTable">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.UserID</th>
+                    <td>@item.UserName</td>
+                    <td>@item.UserEmail</td>
+                    <td class="text-center">
+                        <form asp-action="DeleteUser" method="post" style="display:inline;">
+                            <input type="hidden" name="UserID" value="@item.UserID" />
+                            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        var searchValue = this.value.toLowerCase();
+        var rows = document.querySelectorAll('#userTable tr');
+
+        rows.forEach(function(row) {
+            var userName = row.cells[1].textContent.toLowerCase();
+            var userEmail = row.cells[2].textContent.toLowerCase();
+
+            if (userName.includes(searchValue) || userEmail.includes(searchValue)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+</script>
+

@@ -1,0 +1,162 @@
+﻿@using EntityLayer.Concrete
+@model List<ExerciseProgram>
+
+<style>
+
+
+    .card {
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        background-color: rgba(47,79,79,0.6); /* Başlangıçta arka plan yok */
+        color: white;
+    }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+            background-color: rgba(73, 80, 87, 0.8); /* Üzerine gelindiğinde gri arka plan */
+        }
+
+    .card-body {
+        text-align: center;
+        padding: 1.5rem;
+        opacity: 0; /* Başlangıçta görünmez */
+        transition: opacity 0.3s, transform 0.3s; /* Geçiş efekti */
+        transform: translateY(20px); /* Başlangıçta aşağıda konumlandır */
+    }
+
+    .card:hover .card-body {
+        opacity: 1; /* Üzerine gelindiğinde görünür */
+        transform: translateY(0); /* Üzerine gelindiğinde yukarı çıkar */
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        position: absolute;
+        bottom: 10px; /* Kartın en altında göster */
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam arka plan */
+        padding: 10px;
+        transition: bottom 0.3s, background-color 0.3s, transform 0.3s; /* Geçiş efektleri */
+        z-index: 2; /* Üstte göster */
+        text-align: center;
+    }
+
+    .card:hover .card-title {
+        bottom: auto; /* Üzerine gelindiğinde konumunu değiştir */
+        position: static;
+        background-color: transparent; /* Arka planı kaldır */
+        transform: translateY(-10px); /* Biraz yukarı çıkar */
+    }
+
+    .card img {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        height: 200px;
+        object-fit: cover;
+        transition: opacity 0.3s; /* Geçiş efekti */
+    }
+
+    .card:hover img {
+        opacity: 0.3; /* Üzerine gelindiğinde fotoğraf yarı saydam olur */
+    }
+
+    .btn-secondary {
+        background-color: darkslategray; /* Koyu yeşil */
+        border-color: darkslategray; /* Koyu yeşil */
+        border-radius: 25px;
+        padding: 0.5rem 1.5rem;
+        display: none; /* Başlangıçta görünmez */
+        transition: display 0.3s; /* Geçiş efekti */
+    }
+
+    .card:hover .btn-secondary {
+        display: inline-block; /* Üzerine gelindiğinde görünür */
+    }
+
+    .container {
+        margin-top: 2rem;
+    }
+
+    .jumbotron {
+        background: url('https://getwallpapers.com/wallpaper/full/5/5/5/1036784-motivational-desktop-backgrounds-1920x1200-hd.jpg') no-repeat center center;
+        background-size: cover;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+        .jumbotron h1 {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .jumbotron p.lead {
+            font-size: 1.3em;
+        }
+
+        .jumbotron ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+            .jumbotron ul li {
+                background: rgba(0, 0, 0, 0.6);
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+                .jumbotron ul li strong {
+                    color: #ffdd57;
+                }
+
+        .jumbotron hr {
+            border-top: 1px solid #ffdd57;
+        }
+</style>
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+    Merhaba! Kayıt olduğun spor programını ve egzersizlerini buradan takip edebilirsin!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+    @foreach (var program in Model)
+    {
+        <div class="col-md-5 mb-4">
+            <div class="card h-100" onclick="location.href='link1.html';" style="cursor: pointer;">
+                <img src="@program.Image" class="card-img-top" alt="Workout 1">
+                <h5 class="card-title">@program.Title</h5>
+                <div class="card-body">
+                    <p class="card-text">@program.Description</p>
+
+                <a asp-action="WeekDetails" asp-controller="ExercisePlan" asp-route-exerciseProgramId="@program.ExerciseProgramId" class="btn btn-secondary">İlerlemeni Sürdür</a>
+                </div>
+            </div>
+        </div>
+    }
+<div class="jumbotron">
+    <h1 class="display-4">Spor Yaparken Dikkat Edilmesi Gerekenler</h1>
+    <p class="lead">Spor yaparken güvenliğiniz ve performansınız için aşağıdaki önemli noktalara dikkat edin.</p>
+    <hr class="my-4">
+    <ul>
+        <li><strong>Isınma ve Soğuma:</strong> Egzersize başlamadan önce kaslarınızı hazırlamak için mutlaka ısının ve egzersiz sonrası kaslarınızı rahatlatmak için soğuma hareketleri yapın.</li>
+        <li><strong>Doğru Ekipman Kullanımı:</strong> Uygun kıyafet ve ayakkabı seçimi yaparak sakatlanma riskini azaltın. Gerekli koruyucu ekipmanları kullanın.</li>
+        <li><strong>Hidrasyon:</strong> Egzersiz sırasında ve sonrasında yeterli miktarda su içerek vücudunuzu susuz bırakmayın.</    </li>
+        <li><strong>Beslenme:</strong> Dengeli ve sağlıklı bir beslenme programı uygulayarak vücudunuzun ihtiyaç duyduğu enerji ve besinleri alın.</li>
+        <li><strong>Doğru Teknik:</strong> Egzersiz hareketlerini doğru formda yaparak sakatlanma riskini azaltın ve en iyi sonuçları elde edin.</li>
+        <li><strong>Dinlenme ve İyileşme:</strong> Vücudunuzun dinlenmesine izin verin ve yeterli uyku aldığınızdan emin olun. İyileşme sürecine önem verin.</li>
+        <li><strong>Hedef Belirleme:</strong> Ulaşılabilir ve ölçülebilir hedefler belirleyerek motivasyonunuzu yüksek tutun.</li>
+        <li><strong>Kendi Sınırlarınızı Bilin:</strong> Vücudunuzun sınırlarını zorlamayın ve aşırıya kaçmayın. Gerektiğinde molalar verin.</li>
+        <li><strong>Düzenli Sağlık Kontrolleri:</strong> Spor yaparken sağlık durumunuzu düzenli olarak kontrol ettirin ve doktor tavsiyelerine uyun.</li>
+    </ul>
+    <p class="lead">
+        Sağlıklı ve güvenli bir spor deneyimi için bu ipuçlarını dikkate alarak hedeflerinize ulaşın!
+    </p>
+</div>

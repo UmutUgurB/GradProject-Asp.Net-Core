@@ -1,0 +1,19 @@
+﻿@using EntityLayer.Concrete
+@model List<Exercise>
+
+
+
+@{
+    ViewData["Title"] = "ExerciseProgram";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+@foreach (var exercise in Model)
+{
+    <div class="exercise">
+        <h2>@exercise.ExerciseName</h2>
+        <p>@exercise.ExerciseDescription</p>
+        <!-- Diğer egzersiz bilgilerini burada gösterebilirsiniz -->
+    </div>
+}

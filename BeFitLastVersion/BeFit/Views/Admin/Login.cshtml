@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+
+
+@{
+    ViewData["Title"] = "Admin Giriş";
+}
+
+
+<div class="container login-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Giriş</h3>
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" name="ManagerMail" placeholder="admin@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="ManagerPassword" placeholder="Şifre">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-login">Giriş</button>
+
+                    </form>
+                    <div class="text-center mt-3">
+                        <a asp-action="Login" asp-controller="Admin" class="btn btn-primary btn-block btn-login">Admin Girişi</a>
+                        <p>Hesabınız Yok mu ? <a asp-controller="Register" asp-action="Register">Kayıt Ol</a></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

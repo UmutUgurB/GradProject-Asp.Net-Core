@@ -1,0 +1,130 @@
+﻿@using EntityLayer.Concrete
+@model List<Day>
+
+@{
+    ViewData["Title"] = "Week Details";
+}
+
+<style>
+    .card {
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        height: 100%;
+    }
+
+    .card-header {
+        background-color: darkslategray;
+        color: white;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        padding: 15px;
+        font-size: 1.25rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-body {
+        padding: 15px;
+        height: calc(100% - 68px);
+        overflow-y: auto;
+    }
+
+    .list-group-item {
+        border: none;
+        padding-left: 0;
+    }
+
+        
+
+    .done-overlay {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: transparent;
+        color: #4CAF50;
+        font-size: 2rem;
+        font-weight: bold;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+    }
+
+    .card.done .done-overlay {
+        opacity: 1;
+    }
+
+    .btn-done {
+        background-color: white;
+        color: darkslategray;
+        border: 2px solid #4CAF50;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        font-family:Cooper;
+    }
+
+        .btn-done:hover {
+            background-color: gray;
+            border-color: gray;
+        }
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        @foreach (var day in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card" id="card-@day.DayID">
+                    <div class="done-overlay" style="color:darkslategray">✔</div>
+                    <div class="card-header">
+                        @day.DayName
+                        <button class="btn-done" onclick="markAsDone('card-@day.DayID')">Tamamladım</button>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">@day.Exercise1</li>
+                            <li class="list-group-item">@day.Exercise2</li>
+                            <li class="list-group-item">@day.Exercise3</li>
+                            <li class="list-group-item">@day.Exercise4</li>
+                            <li class="list-group-item">@day.Exercise5</li>
+                            <li class="list-group-item">@day.Exercise6</li>
+                            <li class="list-group-item">@day.Exercise7</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Load done status from localStorage
+        var cards = document.querySelectorAll(".card");
+        cards.forEach(function (card) {
+            var cardId = card.id;
+            if (localStorage.getItem(cardId) === "done") {
+                card.classList.add("done");
+            }
+        });
+    });
+
+    function markAsDone(cardId) {
+        var card = document.getElementById(cardId);
+        if (card.classList.contains('done')) {
+            card.classList.remove('done');
+            localStorage.removeItem(cardId);
+        } else {
+            card.classList.add('done');
+            localStorage.setItem(cardId, 'done');
+        }
+    }
+</script>

@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+    .container {
+        margin-top: 50px;
+        font-family: Arial, sans-serif;
+    }
+
+    .video-card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: darkslategray;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        height: 400px;
+    }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    .card-body {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .card-text {
+        font-size: 16px;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .card-video {
+        display: none;
+    }
+
+        .card-video.active {
+            display: block;
+            width: 100%;
+        }
+</style>
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Merhaba!</h4>
+    <p>Alanında uzman psikologlarımız iş hayatında karşılaşabileck sorunlar hakkında kendi fikirlerini paylaştılar.Aşağıdaki seçeneklerden psikologlarımızın ilgili konulardaki fikirlerini görebilirsin.</p>
+    <hr>
+    <p class="mb-0">Psikologlarımızın yorumlamasını istediğin başka konular varsa bizimle iletişime geçebilirsin!</p>
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card video-card mb-4">
+                <img src="https://www.hipnoterapi.com/wp-content/uploads/2018/12/psikoloji-nedir-hipnoz.png" alt="Video Thumbnail" class="card-img-top" onclick="playVideo(this)">
+                <video class="card-video" controls>
+                    <source src="~/video/hedef.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-body">
+                    <h5 class="card-title" style="font-family:Calibri">Hedef Baskısı</h5>
+                    <p class="card-text">İş dünyasındaki rekabet stres ve kaygıyı artırır.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card video-card mb-4">
+                <img src="https://turkau.com/wp-content/uploads/2019/10/Siber-Psikoloji.jpg" alt="Video Thumbnail" class="card-img-top" onclick="playVideo(this)">
+                <video class="card-video" controls>
+                    <source src="~/video/sosyal.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-body">
+                    <h5 class="card-title">Ofiste Sosyal Hayat</h5>
+                    <p class="card-text">İşyerindeki ortam, çalışanların ilişkilerini geliştirir. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card video-card mb-4">
+                <img src="https://img.pixers.pics/pho_wat(s3:700/FO/70/25/72/43/700_FO70257243_61ddc488119ea8b43bc90d370a8fc382.jpg,700,544,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,494,jpg)/duvar-resimleri-psikoloji.jpg.jpg" alt="Video Thumbnail" class="card-img-top" onclick="playVideo(this)">
+                <video class="card-video" controls>
+                    <source src="~/video/mesleki.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-body">
+                    <h5 class="card-title">İlerleme Kaygısı</h5>
+                    <p class="card-text">Kariyerinde ilerlemek isteyenler yeni beceri kazanma kaygısı yaşar.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card video-card mb-4">
+                <img src="https://www.datocms-assets.com/64859/1650464952-psikoloji-egitimi-veren-kurumlar.jpg?q=70&auto=format&w=360&fit=crop&iptc=allow&crop=faces,focalpoint&h=200" alt="Video Thumbnail" class="card-img-top" onclick="playVideo(this)">
+                <video class="card-video" controls>
+                    <source src="https://www.youtube.com/watch?v=XkcqgdejcZE" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-body">
+                    <h5 class="card-title">Mobbing</h5>
+                    <p class="card-text">İş yerindeki olumsuz davranışlar çalışanları etkiler.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card video-card mb-4">
+                <img src="https://www.korfezdehaber.com/images/haberler/2021/07/ogrencilerde_universite_tercih_doneminde_stres_ve_psikoloji_h108456_5e7dc.jpg" alt="Video Thumbnail" class="card-img-top" onclick="playVideo(this)">
+                <video class="card-video" controls>
+                    <source src="videos/sample5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-body">
+                    <h5 class="card-title">Cinsiyet Eşitsizliği</h5>
+                    <p class="card-text">Kadınlar iş hayatında eşitsizlikle mücadele eder.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card video-card mb-4">
+                <img src="https://www.psikologyusufyerli.com/upload/obsesif-ve-kompulsif-bozukluk.jpg" alt="Video Thumbnail" class="card-img-top" onclick="playVideo(this)">
+                <video class="card-video" controls>
+                    <source src="https://www.youtube.com/watch?v=aE0Qr3vtvuE" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-body">
+                    <h5 class="card-title">Özgüven Problemleri</h5>
+                    <p class="card-text">Özgüven eksikliği başarıyı engelleyebilir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function playVideo(img) {
+        const card = img.closest('.card');
+        const video = card.querySelector('.card-video');
+        const otherVideos = document.querySelectorAll('.card-video');
+        const otherImgs = document.querySelectorAll('.card-img-top');
+
+        otherVideos.forEach(v => {
+            if (v !== video) {
+                v.pause();
+                v.classList.remove('active');
+            }
+        });
+
+        otherImgs.forEach(i => {
+            if (i !== img) {
+                i.style.display = 'block';
+            }
+        });
+
+        video.classList.add('active');
+        video.play();
+        img.style.display = 'none';
+
+        video.addEventListener('pause', () => {
+            img.style.display = 'block';
+            video.classList.remove('active');
+        });
+
+        video.addEventListener('ended', () => {
+            img.style.display = 'block';
+            video.classList.remove('active');
+        });
+    }
+</script>
+

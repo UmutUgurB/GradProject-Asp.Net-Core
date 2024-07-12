@@ -1,0 +1,132 @@
+﻿@{
+    ViewData["Title"] = "HomePage";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        position: relative; /* Konumlandırma için ana konteynırı konumlandır */
+    }
+
+    .card {
+        background-color: #f3f3f3;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .card-text {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .btn-secondary {
+        background-color: #8bc34a;
+        border-color: #8bc34a;
+    }
+
+        .btn-secondary:hover {
+            background-color: #689f38;
+            border-color: #689f38;
+        }
+
+</style>
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <a asp-action="ExerciseList" asp-controller="Exercise">
+                <div class="card" style="background-color:#008080">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4721/4721098.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" style="color:white;font-family:'Papyrus';font-size:larger">Üst Vücut Egzersizleri</h5>
+                        <p class="card-text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white;"> Üst Vücudunuzu geliştirmek için en uygun hareketleri ve açıklamalarını görmek için buraya tıklayın.</p>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <a asp-action="LowerBodyExerciseList" asp-controller="Exercise">
+                <div class="card" style="background-color:#008080">
+                    <img src="https://static.vecteezy.com/system/resources/previews/026/470/222/original/3d-sportsman-character-building-lower-body-strength-with-barbell-squat-workout-free-png.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" style="color:white;font-family:'Papyrus';font-size:larger">Alt Vücut Egzersizleri</h5>
+                        <p class="card-text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white;">Alt Vücudunuzu geliştirmek için en uygun hareketleri ve açıklamalarını görmek için buraya tıklayın.</p>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <a asp-action="SixPackExerciseList" asp-controller="Exercise">
+                <div class="card" style="background-color:#008080">
+                    <img src="https://cdn-icons-png.flaticon.com/256/3306/3306764.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" style="color:white;font-family:'Papyrus';font-size:larger">Karın Kaslarını Geliştir</h5>
+                        <p class="card-text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white;">Karın Kaslarınızı geliştirmek için en uygun hareketleri ve açıklamalarını görmek için buraya tıklayın.</p>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <a asp-action="BurnCaloryExerciseList" asp-controller="Exercise">
+                <div class="card" style="background-color:#008080">
+                    <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/calories-burn-5268885-4426504.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" style="color:white;font-family:'Papyrus';font-size:larger">Kalori Yak</h5>
+                        <p class="card-text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white;">Hayatınıza hareket katmak ve kalori yakmanızı sağlayacak en iyi egzersizleri görmek için bu linke tıklayınız.</p>
+
+                    </div>
+
+
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <a asp-action="ProtectYourselfExerciseList" asp-controller="Exercise" style="text-decoration:none;">
+                <div class="card" style="background-color:#008080">
+                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/boxing-glove-8125088-6516479.png?f=webp" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" style="color:white;font-family:'Papyrus';font-size:larger">Kendini Savun</h5>
+                        <p class="card-text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white;">Dövüş sporları ve kendini savunma, güvenlik ve özsaygı için kritiktir, kişisel gelişime yardımcı olur.</p>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+

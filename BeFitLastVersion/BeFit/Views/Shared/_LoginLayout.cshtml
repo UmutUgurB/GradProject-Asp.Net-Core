@@ -1,0 +1,83 @@
+﻿<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.7); /* Daha belirgin şeffaflık */
+        padding: 10px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge */
+        backdrop-filter: blur(10px); /* Arka plan bulanıklaştırma */
+        transition: background-color 0.3s ease;
+    }
+
+        .navbar:hover {
+            background-color: rgba(255, 255, 255, 0.9); /* Hover efekti */
+        }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        font-weight: 600; /* Daha kalın yazı */
+        margin-left: 10px;
+        transition: color 0.3s ease;
+    }
+
+        .nav-link:hover {
+            color: #007BFF; /* Linklere hover efekti */
+        }
+
+    .profile-pic {
+        width: 40px; /* Biraz daha büyük resim */
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #fff; /* Beyaz kenarlık */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif bir gölge */
+        transition: transform 0.3s ease;
+    }
+
+        .profile-pic:hover {
+            transform: scale(1.1); /* Profil fotoğrafı hover efekti */
+        }
+
+    .nav-right .nav-link {
+        margin-right: 20px;
+    }
+
+    .content {
+        padding: 100px 20px; /* İçerik için üstten boşluk */
+        text-align: center;
+    }
+
+        .content h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 24px;
+            color: #666;
+        }
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRidxojOUJjOvHXXwCfAPHa2ovLCNXpHSfMdg&usqp=CAU" alt="Profil Fotoğrafı" class="profile-pic">
+        <a asp-action="Index" asp-controller="FirstPage" class="nav-link">Anasayfa</a>
+    </div>
+    <div class="nav-right">
+        <a asp-action="Login" asp-controller="Login" class="nav-link">Giriş Yap</a>
+    </div>
+</nav>
+@RenderBody()

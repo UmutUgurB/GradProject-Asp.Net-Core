@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "HomePage";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        position: relative; /* Konumlandırma için ana konteynırı konumlandır */
+    }
+
+    .card {
+        background-color: #f3f3f3;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .card-text {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .btn-secondary {
+        background-color: #8bc34a;
+        border-color: #8bc34a;
+    }
+
+        .btn-secondary:hover {
+            background-color: #689f38;
+            border-color: #689f38;
+        }
+
+    
+</style>
+
+
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+    Hoşgeldiniz 
+    <strong>@ViewBag.v2</strong> En iyi içeriklerle sağlıklı bir yaşam tarzına merhaba deyin!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="card" style="background-color:#008080">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/bodybuilder-doing-arm-workout-3895491-3255863.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title" style="color:white;font-family:'Papyrus';font-size:larger">Harekete Geç</h5>
+                    <p class="card-text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white;"> Fit ve sağlıklı bir vücuda kavuşmanızı sağlayacak antrenman programları için doğru yerdesiniz. </p>
+
+                </div>
+            </div>
+        </div>
+        <p> @ViewBag.WelcomeMessage</p>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <a href="#" style="text-decoration:none; ">
+                <div class="card" style="background-color:#008080">
+                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/bodybuilder-3895496-3255868.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" style="color:white;font-family:'Papyrus';font-size:larger">Sağlıklı Beslen</h5>
+                        <p class="card-text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white;">Sizi hedefinize ulaştıracak en iyi beslenme programları için doğru yerdesiniz.</p>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="card" style="background-color:#008080">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/male-weightlifter-showing-thumbs-up-3895497-3255869.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title" style="color:white;font-family:'Papyrus';font-size:larger">Psikolojik Destek</h5>
+                    <p class="card-text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white;">Size destek olacak psikologlarımızla hizmetinize hazırız.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
